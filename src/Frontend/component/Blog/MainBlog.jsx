@@ -1,12 +1,11 @@
-
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import useFetchBlogDetails from "../utils/hooks/useFetchBlogDetails";
 import { IP_ADDRESS, PORT } from "../utils/constants";
+import img from "../../../assets/Image_not_available.png";
 const MainBlog = () => {
   const location = useLocation();
 
-  
   const { data: blog, loading } = useFetchBlogDetails();
   const { data1: recentBlogs } = useFetchBlogDetails();
 
@@ -32,6 +31,7 @@ const MainBlog = () => {
               </h1>
               <img
                 src={`http://${IP_ADDRESS}:${PORT}${blog.image}`}
+                onError={(e) => (e.target.src = img)}
                 className="w-full  object-cover rounded-xl"
                 alt="Blog Cover"
               />
@@ -59,6 +59,7 @@ const MainBlog = () => {
                     <div className="flex lg:flex-row flex-col">
                       <img
                         src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                        onError={(e) => (e.target.src = img)}
                         className="lg:w-40 w-full h-40 object-cover rounded-xl "
                       />
                       <div className="px-2">
@@ -67,13 +68,7 @@ const MainBlog = () => {
                             {item.title}
                           </h1>
                         </Link>
-                        {/* <p className=" text-xl  md:text-lg">
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: item.description,
-                            }}
-                          />
-                        </p> */}
+
                         <div className=" py-4  md:text-lg">
                           <h1>
                             Posted By :

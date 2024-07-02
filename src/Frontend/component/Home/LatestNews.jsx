@@ -24,7 +24,7 @@ export const LatestNews = () => {
                   className="flex lg:flex-row flex-col space-x-3 space-y-4 sm:space-y-0"
                   key={item.title}>
                   <img
-                    className="lg:h-40 h-52 lg:w-52 md:w-70 w-full rounded-xl"
+                    className="lg:w-52 md:w-70 w-full rounded-xl"
                     src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
                     alt={item.title}
                   />
@@ -32,10 +32,12 @@ export const LatestNews = () => {
                     <p className="font-bold  text-left">{item.title}</p>
                     <p>{item.description}</p>
                     <p className="text-[#ED1450] text-left font-bold ">
-                      Post
+                      Posted By:
                       <span className="text-black p-3 font-normal">
                         {item.posted_By}
-                        <span className="p-2 font-normal">{formatDate(item.createdAt)}</span>
+                        <span className="p-2 font-normal">
+                          {formatDate(item.createdAt)}
+                        </span>
                       </span>
                     </p>
                   </div>
@@ -45,7 +47,7 @@ export const LatestNews = () => {
           )}
           {!loading && (
             <Link to="/newspage">
-              <div className="flex justify-center p-5">
+              <div className="flex justify-center p-5 mt-10">
                 <button className="bg-[#ED1450] text-white p-3 rounded-full w-32">
                   Know More
                 </button>

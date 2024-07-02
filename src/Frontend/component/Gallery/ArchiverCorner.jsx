@@ -3,7 +3,7 @@ import ImageModal from "../Home/ImageModal";
 import { useLocation } from "react-router-dom";
 import { IP_ADDRESS, PORT } from "../utils/constants";
 import useFetchAchiver from "../utils/hooks/useFetchAchiver";
-
+import img from "../../../assets/Image_not_available.png";
 export const ArchiverCorner = () => {
   const { data, loading } = useFetchAchiver();
   console.log(data);
@@ -67,6 +67,7 @@ export const ArchiverCorner = () => {
                   </div>
                   <img
                     src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                    onError={(e) => (e.target.src = img)}
                     alt=""
                     className="w-full cursor-pointer"
                     onClick={() => openModal(index)}

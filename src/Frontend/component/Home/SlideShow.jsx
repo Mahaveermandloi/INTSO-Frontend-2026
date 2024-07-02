@@ -7,7 +7,7 @@ import useFetchData from "../utils/hooks/useFetchData";
 import { IP_ADDRESS, PORT } from "../utils/constants";
 import Spinner1 from "../common files/Spinner1";
 import img from "../../../../src/assets/Frontend_images/Action_1.png";
-
+import img1 from "../../../assets/Image_not_available.png";
 const Slideshow = () => {
   const { data1: bannerData, loading } = useFetchData();
   // const handleButtonClick = (route) => {
@@ -33,6 +33,7 @@ const Slideshow = () => {
                 <img
                   className="carousel-image md:h-[430px] h-full object-cover"
                   src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                  onError={(e) => (e.target.src = img1)}
                   alt="not found"
                 />
                 <div className="flex flex-col lg:px-36 px-10 md:py-28 py-2 2xl:px-[440px] 2xl:pl-56  text-left sm:gap-2 gap-1 absolute top-0 left-0 text-[#ED1450] ">

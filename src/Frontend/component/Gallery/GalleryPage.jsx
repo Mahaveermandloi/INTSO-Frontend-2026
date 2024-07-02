@@ -3,6 +3,7 @@ import ImageModal from "../Home/ImageModal";
 import { useLocation } from "react-router-dom";
 import { IP_ADDRESS, PORT } from "../utils/constants";
 import useFetchGalleryData from "../utils/hooks/useFetchGalleryData";
+import img from "../../../assets/Image_not_available.png";
 export const GalleryPage = () => {
   const [page, setPage] = useState(1);
   const limit = 9; // Number of items per page
@@ -66,6 +67,7 @@ export const GalleryPage = () => {
               <div key={index} className={`${colSpanClass} relative w-full`}>
                 <img
                   src={`http://${IP_ADDRESS}:${PORT}${item.gallery_img}`}
+                  onError={(e) => (e.target.src = img)}
                   alt=""
                   className="w-full h-48 object-cover cursor-pointer"
                   style={{ height: "200px", width: "100%", objectFit: "cover" }}

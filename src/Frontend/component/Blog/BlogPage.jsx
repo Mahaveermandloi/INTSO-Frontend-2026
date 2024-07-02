@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import useFetchBlogData from "../utils/hooks/useFetchBlogData";
 import { IP_ADDRESS, PORT } from "../utils/constants";
+import img from "../../../assets/Image_not_available.png";
 const BlogPage = () => {
   const location = useLocation();
   const [page, setPage] = useState(1);
-  const limit = 10; 
+  const limit = 10;
   const { data: blogs, loading } = useFetchBlogData(page, limit);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,6 +18,7 @@ const BlogPage = () => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
+
   return (
     <>
       <div className="shadow-inner shadow-gray-300">
@@ -28,6 +30,7 @@ const BlogPage = () => {
                 className="flex flex-col shadow-2xl rounded-xl space-y-2 p-5">
                 <img
                   src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                  onError={(e) => (e.target.src = img)}
                   className="h-52 rounded-2xl object-cover"
                   alt={item.title}
                 />
@@ -43,7 +46,7 @@ const BlogPage = () => {
                 <div className="border-b-2 mt-3 border-gray-300 w-full"></div>
                 <div className="flex justify-between py-4 md:text-lg">
                   <h1>
-                    Posted By:{" "}
+                    Posted By:
                     <span className="text-[#ED1450] font-bold">
                       {item.posted_By}
                     </span>

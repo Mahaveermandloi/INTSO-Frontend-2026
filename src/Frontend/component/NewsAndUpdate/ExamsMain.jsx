@@ -4,8 +4,11 @@ import useFetchNewsUpdate from "../utils/hooks/useFetchNewsUpdate";
 import { IP_ADDRESS, PORT } from "../utils/constants";
 import Spinner1 from "../common files/Spinner1";
 export const ExamsMain = () => {
-  const { data3: updateArray, loading } = useFetchNewsUpdate();
-  console.log("updateArray", updateArray);
+  const { data2: EventAndExamArray, loading } = useFetchNewsUpdate();
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
   return (
     <>
       <div>
@@ -16,12 +19,12 @@ export const ExamsMain = () => {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 grid-cols-1 gap-y-14 gap-x-14">
-              {updateArray.map((item) => (
+              {EventAndExamArray.map((item) => (
                 <div
                   className="flex sm:flex-row flex-col space-x-3 "
                   key={item.title}>
                   <img
-                    className="lg:h-36 h-52 lg:w-52 w-52"
+                    className=" lg:w-52 w-52"
                     src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
                     alt={item.title}
                   />
@@ -29,10 +32,12 @@ export const ExamsMain = () => {
                     <p className="font-bold  text-left">{item.title}</p>
                     <p>{item.description}</p>
                     <p className="text-[#ED1450] text-left font-bold ">
-                      Post
+                      Posted By:
                       <span className="text-black p-3 font-normal">
                         {item.posted_By}
-                        <span className="p-2 font-normal">August 30,2024</span>
+                        <span className="p-2 font-normal">
+                          {formatDate(item.createdAt)}
+                        </span>
                       </span>
                     </p>
                   </div>

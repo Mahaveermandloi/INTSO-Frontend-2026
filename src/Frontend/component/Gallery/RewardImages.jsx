@@ -3,6 +3,8 @@ import ImageModal from "../Home/ImageModal";
 import { useLocation } from "react-router-dom";
 import { IP_ADDRESS, PORT } from "../utils/constants";
 import useFetchRewards from "../utils/hooks/useFetchRewards";
+import img from "../../../assets/Image_not_available.png";
+
 export const RewardImages = () => {
   const { data, loading } = useFetchRewards();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,7 +12,6 @@ export const RewardImages = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedData, setDisplayedData] = useState([]);
   const location = useLocation();
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,9 +63,9 @@ export const RewardImages = () => {
                 <div className="h-[90%] flex flex-col justify-center items-center">
                   <img
                     src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                    onError={(e) => (e.target.src = img)}
                     alt=""
                     className="w-full  cursor-pointer"
-                    // style={{ height: "200px", width: "100%", objectFit: "cover" }}
                     data-aos="zoom-in"
                     onClick={() => openModal(index)}
                   />

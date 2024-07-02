@@ -16,6 +16,20 @@ const SchoolList = () => {
   const [selectedSchoolName, setSelectedSchoolName] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
+
+  const handleDeleteClick = () => {
+    setIsModalOpen1(true);
+  };
+
+  const handleConfirmDelete = () => {
+    deleteSchool(selectedSchool.school_id);
+    setIsModalOpen1(false);
+  };
+
+  const handleCancelDelete = () => {
+    setIsModalOpen1(false);
+  };
 
   const navigate = useNavigate();
 
@@ -108,8 +122,7 @@ const SchoolList = () => {
             <div>
               <button
                 onClick={() => navigate("/admin/addschool")}
-                className="w-full text-white bg-[#ed1450] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              >
+                className="w-full text-white bg-[#ed1450] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                 Add School
               </button>
             </div>
@@ -160,8 +173,7 @@ const SchoolList = () => {
                 <tr>
                   <td
                     colSpan="8"
-                    className="px-6 py-4 text-center text-gray-500"
-                  >
+                    className="px-6 py-4 text-center text-gray-500">
                     No matching records found
                   </td>
                 </tr>
@@ -169,8 +181,7 @@ const SchoolList = () => {
                 currentData.map((school) => (
                   <tr
                     className="bg-white border-b dark:bg-gray-100 dark:border-gray-300"
-                    key={school.school_id}
-                  >
+                    key={school.school_id}>
                     <td className="px-4 py-2 text-base font-bold text-black">
                       {school.school_name}
                     </td>
@@ -203,8 +214,7 @@ const SchoolList = () => {
                 currentPage === 1
                   ? "bg-gray-300 text-gray-500"
                   : "bg-blue-500 text-white"
-              }`}
-            >
+              }`}>
               <FaChevronLeft />
             </button>
 
@@ -217,8 +227,7 @@ const SchoolList = () => {
                   currentPage === number + 1
                     ? "bg-blue-500 text-white"
                     : "bg-gray-300 text-gray-500"
-                }`}
-              >
+                }`}>
                 {number + 1}
               </button>
             ))}
@@ -228,14 +237,12 @@ const SchoolList = () => {
               <>
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
-                  className="mx-1 px-3 py-1 rounded bg-gray-300 text-gray-500"
-                >
+                  className="mx-1 px-3 py-1 rounded bg-gray-300 text-gray-500">
                   ...
                 </button>
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
-                  className={`mx-1 px-3 py-1 rounded bg-blue-500 text-white`}
-                >
+                  className={`mx-1 px-3 py-1 rounded bg-blue-500 text-white`}>
                   {currentPage}
                 </button>
               </>
@@ -249,8 +256,7 @@ const SchoolList = () => {
                 currentPage === totalPages
                   ? "bg-gray-300 text-gray-500"
                   : "bg-blue-500 text-white"
-              }`}
-            >
+              }`}>
               <FaChevronRight />
             </button>
           </div>
@@ -258,7 +264,7 @@ const SchoolList = () => {
 
         {isModalOpen && selectedSchool && (
           <div className="fixed inset-0 p-2 flex items-center justify-center bg-black bg-opacity-75">
-            <div className="mt-16 mx-auto max-w-lg w-full bg-white  p-4 rounded-lg shadow-lg">
+            <div className="mt-8 mx-auto max-w-lg w-full bg-white  p-4 rounded-lg shadow-lg">
               <h2 className="text-2xl mb-4 ">
                 {selectedSchool.school_name} Info
               </h2>
@@ -354,15 +360,39 @@ const SchoolList = () => {
 
               <div className="flex justify-evenly mt-4">
                 <button
-                  onClick={() => deleteSchool(selectedSchool.school_id)}
-                  className=" text-white px-4 py-2 rounded bg-red-600"
-                >
+                  // onClick={() => deleteSchool(selectedSchool.school_id)}
+                  onClick={handleDeleteClick}
+                  className=" text-white px-4 py-2 rounded bg-red-600">
                   Delete
                 </button>
+                {isModalOpen1 && (
+                  <div className="fixed inset-0 flex     items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded shadow-lg">
+                      <h2 className="text-lg font-bold mb-4">Confirm Delete</h2>
+                      <p className="mb-4">
+                        There are students mapped under this school, if you
+                        <br></br>
+                        delete this school all the students will also get
+                        deleted
+                      </p>
+                      <div className="flex justify-end">
+                        <button
+                          onClick={handleCancelDelete}
+                          className="mr-4 px-4 py-2 rounded bg-gray-300">
+                          Cancel
+                        </button>
+                        <button
+                          onClick={handleConfirmDelete}
+                          className="px-4 py-2 rounded bg-red-600 text-white">
+                          Confirm
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="bg-[#ed1450] text-white px-4 py-2 rounded hover:bg-red-600"
-                >
+                  className="bg-[#ed1450] text-white px-4 py-2 rounded hover:bg-red-600">
                   Close
                 </button>
               </div>
