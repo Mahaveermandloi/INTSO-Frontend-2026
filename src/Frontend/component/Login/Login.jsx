@@ -96,10 +96,8 @@ const Login = () => {
                 <img src={logo} />
                 <div className="flex flex-col items-center mt-10 space-y-2">
                   <h1 className="text-[#ED1450] text-3xl font-bold">Login</h1>
-                  <p className="text-[#313866] text-center">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting.
-                  </p>
+                  {/* <p className="text-[#313866] text-center">
+                  </p> */}
                 </div>
                 <div className="w-2/3 mt-6">
                   <form className="space-y-4" onSubmit={formik.handleSubmit}>

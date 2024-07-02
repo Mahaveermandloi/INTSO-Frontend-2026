@@ -98,12 +98,17 @@ const SubHeader = () => {
   const handleProfileMenuClose = () => {
     setProfileAnchorEl(null);
   };
+  const handleMyContentClick = () => {
+    handleProfileMenuClose();
+    navigate("/mycontent");
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("email");
     localStorage.removeItem("token");
     setIsLogined("Logout");
     navigate("/");
+    window.location.reload();
   };
 
   return (
@@ -405,9 +410,7 @@ const SubHeader = () => {
                       Profile
                     </MenuItem>
                   </Link>
-                  <MenuItem onClick={() => navigate("/mycontent")}>
-                    My Content
-                  </MenuItem>
+                  <MenuItem onClick={handleMyContentClick}>My Content</MenuItem>
                   <MenuItem onClick={handleLogout}>Logout</MenuItem>
                 </Menu>
               </>
@@ -421,7 +424,7 @@ const SubHeader = () => {
                   className="bg-[#ED1450] px-8 p-2 rounded-full font-bold text-lg text-white"
                   onClick={() => {
                     navigate("/login");
-                    window.location.reload();
+                    // window.location.reload();
                   }}>
                   Login
                 </button>

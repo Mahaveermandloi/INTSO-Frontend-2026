@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import useFetchData from "../utils/hooks/useFetchData";
 import { IP_ADDRESS, PORT } from "../utils/constants";
 import Spinner1 from "../common files/Spinner1";
-
+import img1 from "../../image/user (1).png";
 import img from "../../../Frontend/image/TestiMonial.png";
 
 export const Testimonial = () => {
@@ -54,6 +54,7 @@ export const Testimonial = () => {
                       <img
                         className="carousel-image1 object-cover"
                         src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                        onError={(e) => (e.target.src = img1)}
                         alt={item.alt}
                       />
                       <div className="p-10 flex flex-col justify-center items-center space-y-3">

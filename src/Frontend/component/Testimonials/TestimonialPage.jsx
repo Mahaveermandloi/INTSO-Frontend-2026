@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { API_KEY, IP_ADDRESS, PORT } from "../utils/constants";
+import { IP_ADDRESS, PORT } from "../utils/constants";
 import useFetchTestimonials from "../utils/hooks/useFetchTestimonials";
-
+import img from "../../image/user (1).png";
 const TestimonialPage = () => {
   const [page, setPage] = useState(1);
   const location = useLocation();
@@ -34,6 +34,7 @@ const TestimonialPage = () => {
             <h1 className="font-bold text-xl text-center">{item.name}</h1>
             <img
               src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+              onError={(e) => (e.target.src = img)}
               className="rounded-full w-28 h-28"
               alt="testimonial"
             />

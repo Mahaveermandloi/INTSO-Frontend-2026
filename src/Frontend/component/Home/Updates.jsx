@@ -2,6 +2,7 @@ import React from "react";
 import useFetchData from "../utils/hooks/useFetchData";
 import { IP_ADDRESS, PORT } from "../utils/constants";
 import Spinner1 from "../common files/Spinner1";
+import { Link } from "react-router-dom";
 export const Updates = () => {
   const { data6: updateArray, loading } = useFetchData();
   const formatDate = (dateString) => {
@@ -24,7 +25,7 @@ export const Updates = () => {
                   className="flex sm:flex-row flex-col space-x-3 "
                   key={item.title}>
                   <img
-                    className="lg:h-36 h-52 lg:w-52 w-52"
+                    className="lg:w-52 w-52"
                     src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
                     alt={item.title}
                   />
@@ -32,10 +33,12 @@ export const Updates = () => {
                     <p className="font-bold  text-left">{item.title}</p>
                     <p>{item.description}</p>
                     <p className="text-[#ED1450] text-left font-bold ">
-                      Post
+                      Posted By:
                       <span className="text-black p-3 font-normal">
                         {item.posted_By}
-                        <span className="p-2 font-normal">{formatDate(item.createdAt)}</span>
+                        <span className="p-2 font-normal">
+                          {formatDate(item.createdAt)}
+                        </span>
                       </span>
                     </p>
                   </div>
@@ -44,11 +47,13 @@ export const Updates = () => {
             </div>
           )}
           {!loading && (
-            <div className="flex justify-center p-5">
-              <button className="bg-[#ED1450] text-white p-3 rounded-full w-32">
-                Know More
-              </button>
-            </div>
+            <Link to="/newspage?tab=Event">
+              <div className="flex justify-center p-5 mt-10">
+                <button className="bg-[#ED1450] text-white p-3 rounded-full w-32">
+                  Know More
+                </button>
+              </div>
+            </Link>
           )}
         </div>
       </div>

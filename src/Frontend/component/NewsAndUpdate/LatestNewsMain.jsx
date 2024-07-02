@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import useFetchNewsUpdate from "../utils/hooks/useFetchNewsUpdate";
 export const LatestNewsMain = () => {
   const { data1: newsArray, loading } = useFetchNewsUpdate();
-  console.log("newArray", newsArray);
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
 
   return (
     <>
@@ -22,7 +25,7 @@ export const LatestNewsMain = () => {
                   className="flex lg:flex-row flex-col space-x-3 space-y-4 sm:space-y-0"
                   key={item.title}>
                   <img
-                    className="lg:h-40 h-52 lg:w-52 md:w-70 w-full rounded-xl"
+                    className=" lg:w-52 md:w-70 w-full rounded-xl"
                     src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
                     alt={item.title}
                   />
@@ -30,10 +33,12 @@ export const LatestNewsMain = () => {
                     <p className="font-bold  text-left">{item.title}</p>
                     <p>{item.description}</p>
                     <p className="text-[#ED1450] text-left font-bold ">
-                      Post
+                      Posted By:
                       <span className="text-black p-3 font-normal">
                         {item.posted_By}
-                        <span className="p-2 font-normal">August 30,2024</span>
+                        <span className="p-2 font-normal">
+                          {formatDate(item.createdAt)}
+                        </span>
                       </span>
                     </p>
                   </div>

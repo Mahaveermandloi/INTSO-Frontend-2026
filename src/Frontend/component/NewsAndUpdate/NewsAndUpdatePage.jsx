@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { LatestNewsMain } from "./LatestNewsMain";
 import { ExamsMain } from "./ExamsMain";
 import { EventsMain } from "./EventsMain";
 
 export const NewsAndUpdatePage = () => {
-  const [activeButton, setActiveButton] = useState("latestNews");
   const location = useLocation();
+  const navigate = useNavigate();
+  const queryParams = new URLSearchParams(location.search);
+  const initialTab = queryParams.get("tab") || "latestNews";
+
+  const [activeButton, setActiveButton] = useState(initialTab);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,6 +18,7 @@ export const NewsAndUpdatePage = () => {
 
   const handleButtonClick = (button) => {
     setActiveButton(button);
+    navigate(`?tab=${button}`);
   };
 
   const renderComponent = () => {
