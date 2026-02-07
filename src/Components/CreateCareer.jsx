@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, Bounce, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
+
 import { URLPath, baseURL } from "../URLPath";
 
 const CreateCareer = () => {

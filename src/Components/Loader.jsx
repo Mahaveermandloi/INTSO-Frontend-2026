@@ -1,4 +1,3 @@
-import React from "react";
 
 const Loader = ({ message }) => {
   return (
@@ -33,5 +32,7 @@ const Loader = ({ message }) => {
     </div>
   );
 };
+
+
 
 export default Loader;
