@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_KEY,  } from "../constants";
+import { API_KEY } from "../constants";
 
 import { PROD_BACKEND } from "../../../../URLPath";
 
@@ -10,14 +10,14 @@ const useFetchBlogData = (page, limit) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${PROD_BACKEND}/api/v1/blogs/get-all-blog-By-page?page=${page}&limit=${limit}`,
+          `${PROD_BACKEND}/api/v1/blogs/get-all-blog-details`,
           {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
               api_key: API_KEY,
             },
-          }
+          },
         );
         const jsonData = await response.json();
         if (page === 1) {
@@ -26,7 +26,7 @@ const useFetchBlogData = (page, limit) => {
           setData((prevData) => [...prevData, ...jsonData.data.blogData]);
         }
       } catch (e) {
-        console.log(e);
+        //console.log(e);
       } finally {
         setLoading(false);
       }

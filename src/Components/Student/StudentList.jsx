@@ -42,7 +42,7 @@ const StudentList = () => {
 
       if (schoolResponse.status === 200) {
         setSchoolNameList(schoolResponse.data.data);
-        console.log("schoolResponse", schoolResponse.data.data);
+      
       }
 
       // Fetch student data

@@ -102,7 +102,7 @@ const QandAns = () => {
       formData.append("answer", description);
       formData.append("post_Type", selectedOption);
 
-      console.log("jecdbf", title, description, selectedOption);
+
 
       try {
         const accessToken = localStorage.getItem("accessToken");

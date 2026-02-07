@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import DownloadForOfflineOutlinedIcon from "@mui/icons-material/DownloadForOfflineOutlined";
 
 const ImagesCard = ({ resources }) => {
+
+  //console.log("ImagesCard Resources:", resources); // Debugging log
+
   const navigate = useNavigate();
 
   const handleDownload = async (pdfUrl) => {

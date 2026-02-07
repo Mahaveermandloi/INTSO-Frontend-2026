@@ -3,7 +3,9 @@ import ImagesCard from "./ImagesCard";
 import PdfCard from "./PdfCard";
 import VideosCard from "./VideosCard";
 import { API_KEY,  } from "../utils/constants";
-import Spinner1 from "../common files/Spinner1";
+import Spinner1 from "../common files/Spinner1"
+import { PROD_BACKEND } from "../../../URLPath";
+
 
 const fetchResources = async (searchInput, selectedOption) => {
   const response = await fetch(
@@ -17,8 +19,12 @@ const fetchResources = async (searchInput, selectedOption) => {
     }
   );
 
+
   const data = await response.json();
  
+
+  //console.log("Fetched Resources:", data); // Debugging log
+
   return data.resourceData;
 };
 

@@ -20,7 +20,7 @@ const UpdateCareer = () => {
           );
           const { job_role, job_type, job_location, job_description } =
             response.data.data.data;
-          console.log("Career Data", response.data.data.data);
+  
           setBlogData({
             job_role,
             job_type,

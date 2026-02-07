@@ -51,7 +51,7 @@ const SchoolList = () => {
       );
 
       setSchoolData(approvedSchools);
-      // console.log(approvedSchools);
+    
     } catch (error) {
       console.error("Error fetching data:", error);
     }

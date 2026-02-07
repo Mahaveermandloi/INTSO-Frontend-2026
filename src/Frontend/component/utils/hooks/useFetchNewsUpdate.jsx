@@ -27,7 +27,7 @@ const useFetchNewsUpdate = () => {
         setData2(jsonData.data.EventAndExamArray);
         setData3(jsonData.data.updateArray);
       } catch (e) {
-        console.log(e);
+        //console.log(e);
       } finally {
         setLoading(false);
       }

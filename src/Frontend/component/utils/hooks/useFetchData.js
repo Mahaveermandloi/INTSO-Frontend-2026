@@ -37,7 +37,7 @@ const useFetchData = () => {
         setData6(jsonData.data.homedata.news_update.updateArray);
         setData7(jsonData.data.homedata.galleryData);
       } catch (e) {
-        console.log(e);
+        //console.log(e);
       } finally {
         setLoading(false);
       }

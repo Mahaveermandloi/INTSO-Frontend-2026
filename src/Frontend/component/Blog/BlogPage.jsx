@@ -9,12 +9,19 @@ const BlogPage = () => {
   const [page, setPage] = useState(1);
   const limit = 10;
   const { data: blogs, loading } = useFetchBlogData(page, limit);
+
+
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+
   const handleLoadMore = () => {
     setPage((prev) => prev + 1);
   };
+
+
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);

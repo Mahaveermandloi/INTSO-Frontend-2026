@@ -27,7 +27,7 @@ const CareerList = () => {
           }
         );
         setCareer(response.data.data);
-        console.log(response.data.data);
+      
       } else {
         console.error("No access token found");
       }

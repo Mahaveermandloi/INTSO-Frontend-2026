@@ -1,10 +1,8 @@
-
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SerchBar from "./SerchBar";
 import ResourceList from "./ResourceList";
 import { Achivement } from "../Home/Achivement";
-import { Testimonial } from "../Home/Testimonial";
+
 import { useLocation } from "react-router-dom";
 
 const Knowledge = () => {
@@ -54,11 +52,11 @@ const Knowledge = () => {
         triggerSearch={triggerSearch}
       />
 
+
+      
+
       <div className="mt-10">
         <Achivement />
-      </div>
-      <div>
-        <Testimonial />
       </div>
     </div>
   );

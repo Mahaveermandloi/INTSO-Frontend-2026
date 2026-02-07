@@ -8,7 +8,7 @@ const useFetchGalleryData = (page, limit) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${PROD_BACKEND}/api/v1/gallery/getGalleryData-By-page?page=${page}&limit=${limit}`,
+          `${PROD_BACKEND}/api/v1/gallery/getGallery`,
           {
             method: "GET",
             headers: {
@@ -24,7 +24,7 @@ const useFetchGalleryData = (page, limit) => {
           setData((prevData) => [...prevData, ...jsonData.data]);
         }
       } catch (e) {
-        console.log(e);
+        //console.log(e);
       } finally {
         setLoading(false);
       }

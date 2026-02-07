@@ -28,7 +28,7 @@ const useFetchKnowledgeData = ({ searchInput, selectedOption }) => {
         setData2(jsonData.resourceData.pdfArray);
         setData3(jsonData.resourceData.videoArray);
       } catch (e) {
-        console.log(e);
+        //console.log(e);
       } finally {
         setLoading(false);
       }

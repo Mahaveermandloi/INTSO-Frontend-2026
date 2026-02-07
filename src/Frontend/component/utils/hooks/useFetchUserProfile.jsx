@@ -9,7 +9,7 @@ const useFetchUserProfile = () => {
     const fetchData = async () => {
       try {
         const accessToken = localStorage.getItem("token");
-        // console.log("token", accessToken);
+        // //console.log("token", accessToken);
         if (accessToken) {
           const response = await fetch(
             `${PROD_BACKEND}/api/v1/user/getDetail`,
@@ -20,11 +20,11 @@ const useFetchUserProfile = () => {
             }
           );
           const jsonData = await response.json();
-          // console.log("hook", jsonData.data.data);
+          // //console.log("hook", jsonData.data.data);
           setData(jsonData.data.data);
         }
       } catch (e) {
-        console.log(e);
+        //console.log(e);
       } finally {
         setLoading(false);
       }

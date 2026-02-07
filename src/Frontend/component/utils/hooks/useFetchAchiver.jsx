@@ -19,10 +19,10 @@ const useFetchAchiver = () => {
           }
         );
         const jsonData = await response.json();
-        console.log(jsonData.data);
+        //console.log(jsonData.data);
         setData(jsonData.data);
       } catch (e) {
-        console.log(e);
+        //console.log(e);
       } finally {
         setLoading(false);
       }

@@ -35,7 +35,7 @@ const useFetchBlogDetails = () => {
         setData1(jsonData.data.recentBlogs);
        
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       } finally {
         setLoading(false);
       }

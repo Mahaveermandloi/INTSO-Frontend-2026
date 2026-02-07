@@ -14,12 +14,16 @@ export const Gallery = () => {
 
   const { data7: galleryData = [], loading } = useFetchData();
 
-  console.log("Gallery Data:", galleryData); // Debugging log
 
+
+  //console.log("Gallery Data:", galleryData);
+  
 
   // ✅ Clean URL helper (prevents double slash bugs)
   const getImageUrl = (path) =>
     `${PROD_BACKEND}/${path.replace(/^\/+/, "")}`;
+
+
 
   const openModal = (index) => {
     setCurrentImage(getImageUrl(galleryData[index].gallery_img));
@@ -77,6 +81,7 @@ export const Gallery = () => {
 
         {/* ✅ Masonry Layout */}
         <Masonry
+
           breakpointCols={breakpointColumnsObj}
           className="flex gap-3 px-2"
           columnClassName="space-y-3"

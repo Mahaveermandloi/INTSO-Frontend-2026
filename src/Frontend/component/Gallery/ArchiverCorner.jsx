@@ -6,7 +6,7 @@ import useFetchAchiver from "../utils/hooks/useFetchAchiver";
 import img from "../../../assets/Image_not_available.png";
 export const ArchiverCorner = () => {
   const { data, loading } = useFetchAchiver();
-  console.log(data);
+  //console.log(data);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
