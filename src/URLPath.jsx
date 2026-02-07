@@ -3,7 +3,9 @@ export const URLPath = "http://localhost:8000";
 // export const URLPath = "${PROD_BACKEND}";
 
 // export const PROD_BACKEND = "http://localhost:8000";
+
 export const PROD_BACKEND = "https://intso-backend-2026.onrender.com";
+
 
 
 
