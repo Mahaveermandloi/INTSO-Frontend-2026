@@ -129,7 +129,7 @@ export const Footer = () => {
       {/* Bottom Bar */}
       <div className="bg-[#141833] text-center mt-5">
         <span className="text-sm text-gray-400 block p-3">
-          Copyright © {currentYear} | Designed & Developed By: Ozonesoft Solutions
+          Copyright © {currentYear} | Designed & Developed By: Mahaveer Mandloi 
         </span>
       </div>
     </footer>
