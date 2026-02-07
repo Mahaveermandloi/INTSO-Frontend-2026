@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../constants";
+import { API_KEY,  } from "../constants";
+import { PROD_BACKEND } from "../../../../URLPath";
 const useFetchGalleryData = (page, limit) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -7,7 +8,7 @@ const useFetchGalleryData = (page, limit) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/gallery/getGalleryData-By-page?page=${page}&limit=${limit}`,
+          `${PROD_BACKEND}/api/v1/gallery/getGalleryData-By-page?page=${page}&limit=${limit}`,
           {
             method: "GET",
             headers: {

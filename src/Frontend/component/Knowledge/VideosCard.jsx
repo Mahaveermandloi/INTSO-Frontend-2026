@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import Spinner1 from "../common files/Spinner1";
 import VideoPlayer from "./VideoPlayer";
 import img from "../../../../src/assets/Frontend_images/Play_SVG.png";
@@ -83,7 +83,7 @@ const VideosCard = ({ resources }) => {
                     key={item.id}>
                     <div className="relative w-full rounded-lg overflow-hidden">
                       <img
-                        src={`https://intso-backend-2026.onrender.com${item.thumbnail}`}
+                        src={`${PROD_BACKEND}${item.thumbnail}`}
                         className="w-full h-64  object-cover"
                         alt={item.title}
                         style={{ display: "block" }}

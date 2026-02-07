@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../constants";
+import { API_KEY,  } from "../constants";
+import { PROD_BACKEND } from "../../../../URLPath";
+
+
 const useFetchRewards = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -7,7 +10,7 @@ const useFetchRewards = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/reward/getReward-data`,
+          `${PROD_BACKEND}/api/v1/reward/getReward-data`,
           {
             method: "GET",
             headers: {

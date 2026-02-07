@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ImageModal from "../Home/ImageModal";
 import { useLocation } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 
 const data = [
   {

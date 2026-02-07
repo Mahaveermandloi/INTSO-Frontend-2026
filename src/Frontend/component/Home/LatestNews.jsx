@@ -1,6 +1,6 @@
 import React from "react";
 import useFetchData from "../utils/hooks/useFetchData";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import Spinner1 from "../common files/Spinner1";
 import { Link } from "react-router-dom";
 export const LatestNews = () => {
@@ -25,7 +25,7 @@ export const LatestNews = () => {
                   key={item.title}>
                   <img
                     className="lg:w-52 md:w-70 w-full rounded-xl"
-                    src={`https://intso-backend-2026.onrender.com${item.image}`}
+                    src={`${PROD_BACKEND}${item.image}`}
                     alt={item.title}
                   />
                   <div className="flex flex-col space-y-2 text-sm">

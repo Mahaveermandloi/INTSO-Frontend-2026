@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
 import { useLocation } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+
+import { PROD_BACKEND } from "../../../URLPath";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import img1 from "../../../../src/assets/Frontend_images/Contact Vector.png";
@@ -17,7 +18,7 @@ const ContactUs = () => {
     mobile_number: "",
     message: "",
   });
-  const [statusMessage, setStatusMessage] = useState("");
+  const [statusMessage] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -29,7 +30,7 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/contact/postContact`,
+        `${PROD_BACKEND}/api/v1/contact/postContact`,
         {
           method: "POST",
           body: JSON.stringify(formData),

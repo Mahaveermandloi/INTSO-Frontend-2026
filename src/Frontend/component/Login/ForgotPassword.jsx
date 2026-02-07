@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import img1 from "../../../assets/Frontend_images/forgotPassword.png";
 import logo from "../../../assets/Frontend_images/logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 
 const ForgotPassword = () => {
   const location = useLocation();
@@ -29,7 +29,7 @@ const ForgotPassword = () => {
     onSubmit: async (values, { setSubmitting, setStatus }) => {
       try {
         const res = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/user/forgetpassword`,
+          `${PROD_BACKEND}/api/v1/user/forgetpassword`,
           {
             method: "POST",
             body: JSON.stringify(values),

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useFetchData from "../utils/hooks/useFetchData";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import Spinner1 from "../common files/Spinner1";
 
 export const Blog = () => {
@@ -42,7 +42,7 @@ export const Blog = () => {
                       : "flex md:flex-row flex-col justify-center items-center"
                   }`}>
                   <img
-                    src={`https://intso-backend-2026.onrender.com${item.image}`}
+                    src={`${PROD_BACKEND}${item.image}`}
                     className={`text-left border border-gray-300  object-cover rounded-3xl ${
                       index === 0
                         ? "h-52 w-full rounded-3xl object-cover "

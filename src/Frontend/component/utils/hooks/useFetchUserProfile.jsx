@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../constants";
+
+
+import { PROD_BACKEND } from "../../../../URLPath";
 const useFetchUserProfile = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,7 +12,7 @@ const useFetchUserProfile = () => {
         // console.log("token", accessToken);
         if (accessToken) {
           const response = await fetch(
-            `https://intso-backend-2026.onrender.com/api/v1/user/getDetail`,
+            `${PROD_BACKEND}/api/v1/user/getDetail`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,

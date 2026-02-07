@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -23,7 +23,7 @@ const Cordinator = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/co-ordinator/post-co-ordinator`,
+        `${PROD_BACKEND}/api/v1/co-ordinator/post-co-ordinator`,
         {
           method: "POST",
           body: JSON.stringify(formData),

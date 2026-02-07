@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ImageModal from "../Home/ImageModal";
 import { useLocation } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import useFetchAchiver from "../utils/hooks/useFetchAchiver";
 import img from "../../../assets/Image_not_available.png";
 export const ArchiverCorner = () => {
@@ -22,7 +22,7 @@ export const ArchiverCorner = () => {
   }, [data]);
 
   const openModal = (index) => {
-    setCurrentImage(`https://intso-backend-2026.onrender.com${data[index].image}`);
+    setCurrentImage(`${PROD_BACKEND}${data[index].image}`);
     setCurrentIndex(index);
     setIsModalOpen(true);
   };
@@ -34,13 +34,13 @@ export const ArchiverCorner = () => {
   const showPreviousImage = () => {
     const newIndex = currentIndex > 0 ? currentIndex - 1 : data.length - 1;
     setCurrentIndex(newIndex);
-    setCurrentImage(`https://intso-backend-2026.onrender.com${data[newIndex].image}`);
+    setCurrentImage(`${PROD_BACKEND}${data[newIndex].image}`);
   };
 
   const showNextImage = () => {
     const newIndex = currentIndex < data.length - 1 ? currentIndex + 1 : 0;
     setCurrentIndex(newIndex);
-    setCurrentImage(`https://intso-backend-2026.onrender.com${data[newIndex].image}`);
+    setCurrentImage(`${PROD_BACKEND}${data[newIndex].image}`);
   };
 
   return (
@@ -66,7 +66,7 @@ export const ArchiverCorner = () => {
                     <h1 className="font-bold text-3xl">{item.name}</h1>
                   </div>
                   <img
-                    src={`https://intso-backend-2026.onrender.com${item.image}`}
+                    src={`${PROD_BACKEND}${item.image}`}
                     onError={(e) => (e.target.src = img)}
                     alt=""
                     className="w-full cursor-pointer"

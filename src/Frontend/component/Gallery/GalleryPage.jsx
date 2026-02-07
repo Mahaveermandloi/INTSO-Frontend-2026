@@ -1,7 +1,7 @@
 import  { useEffect, useState } from "react";
 import ImageModal from "../Home/ImageModal";
 import { useLocation } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import useFetchGalleryData from "../utils/hooks/useFetchGalleryData";
 import img from "../../../assets/Image_not_available.png";
 export const GalleryPage = () => {
@@ -20,8 +20,8 @@ export const GalleryPage = () => {
     setDisplayedData(data);
   }, [data]);
   const openModal = (index) => {
-    setCurrentImage(`https://intso-backend-2026.onrender.com${data[index].gallery_img}`);
-    // setCurrentImage(`https://intso-backend-2026.onrender.com${data[index].gallery_img}`);
+    setCurrentImage(`${PROD_BACKEND}${data[index].gallery_img}`);
+    // setCurrentImage(`${PROD_BACKEND}${data[index].gallery_img}`);
     setCurrentIndex(index);
     setIsModalOpen(true);
   };
@@ -32,14 +32,14 @@ export const GalleryPage = () => {
     const newIndex = currentIndex > 0 ? currentIndex - 1 : data.length - 1;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `https://intso-backend-2026.onrender.com${data[newIndex].gallery_img}`
+      `${PROD_BACKEND}${data[newIndex].gallery_img}`
     );
   };
   const showNextImage = () => {
     const newIndex = currentIndex < data.length - 1 ? currentIndex + 1 : 0;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `https://intso-backend-2026.onrender.com${data[newIndex].gallery_img}`
+      `${PROD_BACKEND}${data[newIndex].gallery_img}`
     );
   };
   const handleLoadMore = () => {
@@ -67,7 +67,7 @@ export const GalleryPage = () => {
             return (
               <div key={index} className={`${colSpanClass} relative w-full`}>
                 <img
-                  src={`https://intso-backend-2026.onrender.com${item.gallery_img}`}
+                  src={`${PROD_BACKEND}${item.gallery_img}`}
                   onError={(e) => (e.target.src = img)}
                   alt=""
                   className="w-full h-48 object-cover cursor-pointer"

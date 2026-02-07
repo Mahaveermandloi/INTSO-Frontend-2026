@@ -7,7 +7,7 @@ import img from "../../../assets/Frontend_images/LoginPage2.png";
 import logo from "../../../assets/Frontend_images/logo.png";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 
 const ChangePassword = ({ notShow }) => {
   const [showPassword1, setShowPassword1] = useState(false);
@@ -40,7 +40,7 @@ const ChangePassword = ({ notShow }) => {
     onSubmit: async (values, { setSubmitting }) => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/user/updatenewpassword`,
+          `${PROD_BACKEND}/api/v1/user/updatenewpassword`,
           {
             method: "POST",
             headers: {

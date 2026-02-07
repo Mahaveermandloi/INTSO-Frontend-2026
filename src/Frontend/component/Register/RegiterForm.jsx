@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import useFormValidation from "../utils/hooks/useFormValidation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -46,7 +46,7 @@ const RegisterForm = () => {
 
     try {
       const res = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/school/registerSchool`,
+        `${PROD_BACKEND}/api/v1/school/registerSchool`,
         {
           method: "POST",
           body: JSON.stringify(formData),

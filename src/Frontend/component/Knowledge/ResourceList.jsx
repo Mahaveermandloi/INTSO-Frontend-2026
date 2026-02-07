@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import ImagesCard from "./ImagesCard";
 import PdfCard from "./PdfCard";
 import VideosCard from "./VideosCard";
-import { API_KEY, IP_ADDRESS, PORT } from "../utils/constants";
+import { API_KEY,  } from "../utils/constants";
 import Spinner1 from "../common files/Spinner1";
 
 const fetchResources = async (searchInput, selectedOption) => {
   const response = await fetch(
-    `https://intso-backend-2026.onrender.com/api/v1/resource/get-all-resources?searchTerm=${searchInput}&resource_class=${selectedOption}`,
+    `${PROD_BACKEND}/api/v1/resource/get-all-resources?searchTerm=${searchInput}&resource_class=${selectedOption}`,
     {
       method: "GET",
       headers: {

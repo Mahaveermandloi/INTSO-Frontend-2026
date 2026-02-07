@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import useFetchData from "../utils/hooks/useFetchData";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import Spinner1 from "../common files/Spinner1";
 import img1 from "../../image/user (1).png";
 import img from "../../../Frontend/image/TestiMonial.png";
@@ -53,7 +53,7 @@ export const Testimonial = () => {
                     <div className="space-y-1">
                       <img
                         className="carousel-image1 object-cover"
-                        src={`https://intso-backend-2026.onrender.com${item.image}`}
+                        src={`${PROD_BACKEND}${item.image}`}
                         onError={(e) => (e.target.src = img1)}
                         alt={item.alt}
                       />

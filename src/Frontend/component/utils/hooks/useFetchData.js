@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../constants";
+import { API_KEY,  } from "../constants";
+import { PROD_BACKEND } from "../../../../URLPath";
 
-const url = `https://intso-backend-2026.onrender.com/api/v1/home/homeData`;
+
+
+
+const url = `${PROD_BACKEND}/api/v1/home/homeData`;
 
 
 

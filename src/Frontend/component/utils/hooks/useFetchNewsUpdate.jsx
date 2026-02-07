@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../constants";
+import { API_KEY,  } from "../constants";
+import { PROD_BACKEND } from "../../../../URLPath";
+
+
+
 const useFetchNewsUpdate = () => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
@@ -9,7 +13,7 @@ const useFetchNewsUpdate = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/newsandupdates/get-news-and-updates`,
+          `${PROD_BACKEND}/api/v1/newsandupdates/get-news-and-updates`,
           {
             method: "GET",
             headers: {

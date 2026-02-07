@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import img from "../../../../src/assets/Frontend_images/Regitration_Graphics.png";
 import useFormValidation from "../utils/hooks/useFormValidation";
 import { ToastContainer, toast } from "react-toastify";
@@ -41,7 +41,7 @@ const StudentRegisterPage = () => {
 
     try {
       const res = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/student/createStudent`,
+        `${PROD_BACKEND}/api/v1/student/createStudent`,
         {
           method: "POST",
           body: JSON.stringify(formData),

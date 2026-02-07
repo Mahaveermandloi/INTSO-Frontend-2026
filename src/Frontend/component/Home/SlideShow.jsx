@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../component/style/adds.css";
 import { Link } from "react-router-dom";
 import useFetchData from "../utils/hooks/useFetchData";
-// import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import Spinner1 from "../common files/Spinner1";
 import img from "../../../../src/assets/Frontend_images/Action_1.png";
 import img1 from "../../../assets/Image_not_available.png";
@@ -32,7 +32,7 @@ const Slideshow = () => {
               <div key={index} style={{ position: "relative" }}>
                 <img
                   className="carousel-image md:h-[430px] h-full object-cover"
-                  src={`https://intso-backend-2026.onrender.com${item.image}`}
+                  src={`${PROD_BACKEND}${item.image}`}
                   onError={(e) => (e.target.src = img1)}
                   alt="not found"
                 />

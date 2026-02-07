@@ -1,11 +1,12 @@
 
 
 import { useState, useEffect } from "react";
-import { IP_ADDRESS, PORT } from "../constants";
+import { PROD_BACKEND } from "../../../../URLPath";
+
 import { useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 
-const url = `https://intso-backend-2026.onrender.com/api/v1/blogs/get-blog-details`;
+const url = `${PROD_BACKEND}/api/v1/blogs/get-blog-details`;
 
 const useFetchBlogDetails = () => {
 

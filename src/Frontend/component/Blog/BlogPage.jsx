@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import useFetchBlogData from "../utils/hooks/useFetchBlogData";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
+
 import img from "../../../assets/Image_not_available.png";
 const BlogPage = () => {
   const location = useLocation();
@@ -29,7 +30,7 @@ const BlogPage = () => {
                 key={index}
                 className="flex flex-col shadow-2xl rounded-xl space-y-2 p-5">
                 <img
-                  src={`https://intso-backend-2026.onrender.com${item.image}`}
+                  src={`${PROD_BACKEND}${item.image}`}
                   onError={(e) => (e.target.src = img)}
                   className="h-52 rounded-2xl object-cover"
                   alt={item.title}

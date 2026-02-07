@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ImageModal from "./ImageModal";
 import useFetchData from "../utils/hooks/useFetchData";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import { Link } from "react-router-dom";
 
 export const Gallery = () => {
@@ -12,7 +12,7 @@ export const Gallery = () => {
 
   const openModal = (index) => {
     setCurrentImage(
-      `https://intso-backend-2026.onrender.com${galleryData[index].gallery_img}`
+      `${PROD_BACKEND}${galleryData[index].gallery_img}`
     );
     setCurrentIndex(index);
     setIsModalOpen(true);
@@ -27,7 +27,7 @@ export const Gallery = () => {
       currentIndex > 0 ? currentIndex - 1 : galleryData.length - 1;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `https://intso-backend-2026.onrender.com${galleryData[newIndex].gallery_img}`
+      `${PROD_BACKEND}${galleryData[newIndex].gallery_img}`
     );
   };
 
@@ -36,7 +36,7 @@ export const Gallery = () => {
       currentIndex < galleryData.length - 1 ? currentIndex + 1 : 0;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `https://intso-backend-2026.onrender.com${galleryData[newIndex].gallery_img}`
+      `${PROD_BACKEND}${galleryData[newIndex].gallery_img}`
     );
   };
 
@@ -62,7 +62,7 @@ export const Gallery = () => {
             return (
               <div key={index} className={`${colSpanClass} relative w-full`}>
                 <img
-                  src={`https://intso-backend-2026.onrender.com${item.gallery_img}`}
+                  src={`${PROD_BACKEND}${item.gallery_img}`}
                   alt=""
                   className="w-full h-48 object-cover cursor-pointer"
                   data-aos="zoom-in"

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import img from "../../../../src/Frontend/image/Newsletter.png";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import { FaCheck, FaSpinner } from "react-icons/fa"; // Import the spinner icon
 
 const Newsletter = () => {
@@ -16,7 +16,7 @@ const Newsletter = () => {
 
     try {
       const response = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/newsLetter/postnewsletter`,
+        `${PROD_BACKEND}/api/v1/newsLetter/postnewsletter`,
         {
           method: "POST",
           headers: {

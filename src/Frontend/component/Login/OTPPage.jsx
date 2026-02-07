@@ -5,7 +5,7 @@ import img from "../../../assets/Frontend_images/OTP.png";
 import logo from "../../../assets/Frontend_images/logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 
 const OTPPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -40,7 +40,7 @@ const OTPPage = () => {
       const otpCode = `${values.otp1}${values.otp2}${values.otp3}${values.otp4}`;
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/user/verifyuser`,
+          `${PROD_BACKEND}/api/v1/user/verifyuser`,
           {
             method: "POST",
             headers: {
@@ -82,7 +82,7 @@ const OTPPage = () => {
   const handleResendOTP = async () => {
     try {
       const response = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/user/resend`,
+        `${PROD_BACKEND}/api/v1/user/resend`,
         {
           method: "POST",
           headers: {

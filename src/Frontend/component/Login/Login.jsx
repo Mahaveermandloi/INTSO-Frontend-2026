@@ -6,7 +6,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import img from "../../../assets/Frontend_images/LoginPage2.png";
 import logo from "../../../assets/Frontend_images/logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -40,7 +40,7 @@ const Login = () => {
     onSubmit: async (values, { setSubmitting }) => {
       try {
         const res = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/user/login`,
+          `${PROD_BACKEND}/api/v1/user/login`,
           {
             method: "POST",
             body: JSON.stringify(values),

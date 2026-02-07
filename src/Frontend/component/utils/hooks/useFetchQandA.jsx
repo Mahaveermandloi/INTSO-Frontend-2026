@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../constants";
+import { API_KEY } from "../constants";
+import { PROD_BACKEND } from "../../../../URLPath";
+
+
 
 const useFetchQandA = (postType, page, limit) => {
   const [data, setData] = useState([]);
@@ -9,7 +12,7 @@ const useFetchQandA = (postType, page, limit) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/Q&A/getData-by-postType?post_Type=${encodeURIComponent(
+          `${PROD_BACKEND}/api/v1/Q&A/getData-by-postType?post_Type=${encodeURIComponent(
             postType
           )}&page=${page}&limit=${limit}`,
           {

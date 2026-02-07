@@ -1,5 +1,5 @@
 import React from "react";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import Spinner1 from "../common files/Spinner1";
 import img from "../../../../src/assets/Frontend_images/Download_SVG.png";
 import { useNavigate } from "react-router-dom";
@@ -71,7 +71,7 @@ const ImagesCard = ({ resources }) => {
                   className="rounded-xl flex flex-col space-y-2 border border-gray-300"
                   data-aos="zoom-in">
                   <img
-                    src={`https://intso-backend-2026.onrender.com${item.resource_url}`}
+                    src={`${PROD_BACKEND}${item.resource_url}`}
                     className="rounded-lg w-full h-64  object-cover"
                     alt={item.title}
                   />
@@ -99,7 +99,7 @@ const ImagesCard = ({ resources }) => {
                         className="bg-[#ED1450] rounded-full flex justify-center items-center gap-1 px-1 p-1 h-fit font-seibold"
                         onClick={() =>
                           handleDownload(
-                            `https://intso-backend-2026.onrender.com${item.resource_url}`
+                            `${PROD_BACKEND}${item.resource_url}`
                           )
                         }>
                         <h1 className="hidden md:block text-white">Download</h1>

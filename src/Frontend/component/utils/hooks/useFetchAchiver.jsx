@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../constants";
+import { API_KEY } from "../constants";
+import { PROD_BACKEND } from "../../../../URLPath";
+
 const useFetchAchiver = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -7,7 +9,7 @@ const useFetchAchiver = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com/api/v1/achiever/get-achievers-data`,
+          `${PROD_BACKEND}/api/v1/achiever/get-achievers-data`,
           {
             method: "GET",
             headers: {

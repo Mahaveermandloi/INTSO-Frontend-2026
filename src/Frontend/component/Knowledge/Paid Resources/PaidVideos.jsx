@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY, IP_ADDRESS, PORT } from "../../utils/constants";
+import { API_KEY,  } from "../../utils/constants";
 import Spinner1 from "../../common files/Spinner1"; // Assuming Spinner1 is correctly imported
 import img from "../../../../../src/assets/Frontend_images/Download_SVG.png";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ const Videos = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/resource/getallvideos`,
+        `${PROD_BACKEND}/api/v1/resource/getallvideos`,
         {
           method: "GET",
           headers: {
@@ -101,8 +101,8 @@ const Videos = () => {
                   className="rounded-xl flex flex-col space-y-2 border border-gray-300"
                   data-aos="zoom-in">
                   <img
-                    // src={`https://intso-backend-2026.onrender.com${item.resource_url}`}
-                    src={`https://intso-backend-2026.onrender.com${item.thumbnail}`}
+                    // src={`${PROD_BACKEND}${item.resource_url}`}
+                    src={`${PROD_BACKEND}${item.thumbnail}`}
                     className="rounded-lg w-full h-64"
                     alt={item.title}
                   />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useFetchUserProfile from "../utils/hooks/useFetchUserProfile";
 import CloseIcon from "@mui/icons-material/Close";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+import { PROD_BACKEND } from "../../../URLPath";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -57,7 +57,7 @@ const UserProfile = () => {
 
     try {
       const response = await fetch(
-        `https://intso-backend-2026.onrender.com/api/v1/user/changePassword`,
+        `${PROD_BACKEND}/api/v1/user/changePassword`,
         {
           method: "PUT",
           headers: {
