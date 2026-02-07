@@ -46,7 +46,7 @@ const RegisterForm = () => {
 
     try {
       const res = await fetch(
-        `https://intso-backend-2026.onrender.com//api/v1/school/registerSchool`,
+        `https://intso-backend-2026.onrender.com/api/v1/school/registerSchool`,
         {
           method: "POST",
           body: JSON.stringify(formData),

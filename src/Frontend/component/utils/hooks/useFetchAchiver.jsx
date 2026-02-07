@@ -7,7 +7,7 @@ const useFetchAchiver = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com//api/v1/achiever/get-achievers-data`,
+          `https://intso-backend-2026.onrender.com/api/v1/achiever/get-achievers-data`,
           {
             method: "GET",
             headers: {

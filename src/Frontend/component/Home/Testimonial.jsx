@@ -53,7 +53,7 @@ export const Testimonial = () => {
                     <div className="space-y-1">
                       <img
                         className="carousel-image1 object-cover"
-                        src={`https://intso-backend-2026.onrender.com/${item.image}`}
+                        src={`https://intso-backend-2026.onrender.com${item.image}`}
                         onError={(e) => (e.target.src = img1)}
                         alt={item.alt}
                       />

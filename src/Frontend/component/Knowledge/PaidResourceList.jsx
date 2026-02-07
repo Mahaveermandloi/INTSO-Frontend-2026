@@ -8,7 +8,7 @@ import Spinner1 from "../common files/Spinner1";
 const fetchResources = async (searchInput, selectedOption, triggerSearch) => {
   try {
     const response = await fetch(
-      `https://intso-backend-2026.onrender.com//api/v1/resource/get-paid-data-by-user?searchTerm=${searchInput}&resource_class=${selectedOption}`,
+      `https://intso-backend-2026.onrender.com/api/v1/resource/get-paid-data-by-user?searchTerm=${searchInput}&resource_class=${selectedOption}`,
       {
         method: "GET",
         headers: {

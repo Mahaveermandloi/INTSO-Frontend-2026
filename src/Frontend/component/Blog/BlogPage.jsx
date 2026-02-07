@@ -29,7 +29,7 @@ const BlogPage = () => {
                 key={index}
                 className="flex flex-col shadow-2xl rounded-xl space-y-2 p-5">
                 <img
-                  src={`https://intso-backend-2026.onrender.com/${item.image}`}
+                  src={`https://intso-backend-2026.onrender.com${item.image}`}
                   onError={(e) => (e.target.src = img)}
                   className="h-52 rounded-2xl object-cover"
                   alt={item.title}

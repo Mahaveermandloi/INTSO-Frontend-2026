@@ -25,7 +25,7 @@ export const Exam = () => {
                   key={item.title}>
                   <img
                     className=" lg:w-52 w-52"
-                    src={`https://intso-backend-2026.onrender.com/${item.image}`}
+                    src={`https://intso-backend-2026.onrender.com${item.image}`}
                     alt={item.title}
                   />
                   <div className="flex flex-col space-y-2 text-sm">

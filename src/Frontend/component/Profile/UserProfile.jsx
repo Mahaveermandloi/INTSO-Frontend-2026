@@ -57,7 +57,7 @@ const UserProfile = () => {
 
     try {
       const response = await fetch(
-        `https://intso-backend-2026.onrender.com//api/v1/user/changePassword`,
+        `https://intso-backend-2026.onrender.com/api/v1/user/changePassword`,
         {
           method: "PUT",
           headers: {

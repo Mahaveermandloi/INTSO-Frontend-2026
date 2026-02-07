@@ -10,7 +10,7 @@ const useFetchUserProfile = () => {
         // console.log("token", accessToken);
         if (accessToken) {
           const response = await fetch(
-            `https://intso-backend-2026.onrender.com//api/v1/user/getDetail`,
+            `https://intso-backend-2026.onrender.com/api/v1/user/getDetail`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,

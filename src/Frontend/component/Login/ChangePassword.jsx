@@ -40,7 +40,7 @@ const ChangePassword = ({ notShow }) => {
     onSubmit: async (values, { setSubmitting }) => {
       try {
         const response = await fetch(
-          `https://intso-backend-2026.onrender.com//api/v1/user/updatenewpassword`,
+          `https://intso-backend-2026.onrender.com/api/v1/user/updatenewpassword`,
           {
             method: "POST",
             headers: {
