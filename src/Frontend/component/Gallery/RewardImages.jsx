@@ -22,7 +22,7 @@ export const RewardImages = () => {
   }, [data]);
 
   const openModal = (index) => {
-    setCurrentImage(`http://${IP_ADDRESS}:${PORT}${data[index].image}`);
+    setCurrentImage(`https://intso-backend-final.onrender.com${data[index].image}`);
     setCurrentIndex(index);
     setIsModalOpen(true);
   };
@@ -34,13 +34,13 @@ export const RewardImages = () => {
   const showPreviousImage = () => {
     const newIndex = currentIndex > 0 ? currentIndex - 1 : data.length - 1;
     setCurrentIndex(newIndex);
-    setCurrentImage(`http://${IP_ADDRESS}:${PORT}${data[newIndex].image}`);
+    setCurrentImage(`https://intso-backend-final.onrender.com${data[newIndex].image}`);
   };
 
   const showNextImage = () => {
     const newIndex = currentIndex < data.length - 1 ? currentIndex + 1 : 0;
     setCurrentIndex(newIndex);
-    setCurrentImage(`http://${IP_ADDRESS}:${PORT}${data[newIndex].image}`);
+    setCurrentImage(`https://intso-backend-final.onrender.com${data[newIndex].image}`);
   };
 
   return (
@@ -62,7 +62,7 @@ export const RewardImages = () => {
                 className="relative w-full   bg-gray-100 space-y-4 py-8 my-5 px-5 rounded-lg">
                 <div className="h-[90%] flex flex-col justify-center items-center">
                   <img
-                    src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                    src={`https://intso-backend-final.onrender.com${item.image}`}
                     onError={(e) => (e.target.src = img)}
                     alt=""
                     className="w-full  cursor-pointer"

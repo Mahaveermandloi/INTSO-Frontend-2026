@@ -101,7 +101,7 @@ const PdfCard = ({ resources }) => {
                         className="bg-[#ED1450] rounded-full flex justify-center items-center gap-1 px-1 p-1 h-fit font-seibold"
                         onClick={() =>
                           handleDownload(
-                            `http://${IP_ADDRESS}:${PORT}${item.resource_url}`
+                            `https://intso-backend-final.onrender.com${item.resource_url}`
                           )
                         }>
                         <h1 className="hidden md:block text-white">Download</h1>

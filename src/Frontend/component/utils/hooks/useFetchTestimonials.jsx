@@ -8,7 +8,7 @@ const useFetchTestimonials = (page, limit) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${IP_ADDRESS}:${PORT}/api/v1/testiMonial/get-testimonial-by-page?page=${page}&limit=${limit}`,
+          `https://intso-backend-final.onrender.com/api/v1/testiMonial/get-testimonial-by-page?page=${page}&limit=${limit}`,
           {
             method: "GET",
             headers: {

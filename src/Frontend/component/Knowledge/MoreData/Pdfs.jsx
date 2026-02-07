@@ -21,7 +21,7 @@ const Pdfs = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://${IP_ADDRESS}:${PORT}/api/v1/resource/getallpdfs`,
+        `https://intso-backend-final.onrender.com/api/v1/resource/getallpdfs`,
         {
           method: "GET",
           headers: {
@@ -126,7 +126,7 @@ const Pdfs = () => {
                           className="text-white text-sm flex items-center"
                           onClick={() =>
                             handleDownload(
-                              `http://${IP_ADDRESS}:${PORT}${item.resource_url}`
+                              `https://intso-backend-final.onrender.com${item.resource_url}`
                             )
                           }>
                           Download

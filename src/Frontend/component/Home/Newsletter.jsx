@@ -16,7 +16,7 @@ const Newsletter = () => {
 
     try {
       const response = await fetch(
-        `http://${IP_ADDRESS}:${PORT}/api/v1/newsLetter/postnewsletter`,
+        `https://intso-backend-final.onrender.com/api/v1/newsLetter/postnewsletter`,
         {
           method: "POST",
           headers: {

@@ -46,7 +46,7 @@ const RegisterForm = () => {
 
     try {
       const res = await fetch(
-        `http://${IP_ADDRESS}:${PORT}/api/v1/school/registerSchool`,
+        `https://intso-backend-final.onrender.com/api/v1/school/registerSchool`,
         {
           method: "POST",
           body: JSON.stringify(formData),

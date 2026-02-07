@@ -12,7 +12,7 @@ export const Gallery = () => {
 
   const openModal = (index) => {
     setCurrentImage(
-      `http://${IP_ADDRESS}:${PORT}${galleryData[index].gallery_img}`
+      `https://intso-backend-final.onrender.com${galleryData[index].gallery_img}`
     );
     setCurrentIndex(index);
     setIsModalOpen(true);
@@ -27,7 +27,7 @@ export const Gallery = () => {
       currentIndex > 0 ? currentIndex - 1 : galleryData.length - 1;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `http://${IP_ADDRESS}:${PORT}${galleryData[newIndex].gallery_img}`
+      `https://intso-backend-final.onrender.com${galleryData[newIndex].gallery_img}`
     );
   };
 
@@ -36,7 +36,7 @@ export const Gallery = () => {
       currentIndex < galleryData.length - 1 ? currentIndex + 1 : 0;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `http://${IP_ADDRESS}:${PORT}${galleryData[newIndex].gallery_img}`
+      `https://intso-backend-final.onrender.com${galleryData[newIndex].gallery_img}`
     );
   };
 
@@ -62,7 +62,7 @@ export const Gallery = () => {
             return (
               <div key={index} className={`${colSpanClass} relative w-full`}>
                 <img
-                  src={`http://${IP_ADDRESS}:${PORT}${item.gallery_img}`}
+                  src={`https://intso-backend-final.onrender.com${item.gallery_img}`}
                   alt=""
                   className="w-full h-48 object-cover cursor-pointer"
                   data-aos="zoom-in"

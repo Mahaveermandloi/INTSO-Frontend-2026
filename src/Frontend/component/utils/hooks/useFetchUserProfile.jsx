@@ -10,7 +10,7 @@ const useFetchUserProfile = () => {
         // console.log("token", accessToken);
         if (accessToken) {
           const response = await fetch(
-            `http://${IP_ADDRESS}:${PORT}/api/v1/user/getDetail`,
+            `https://intso-backend-final.onrender.com/api/v1/user/getDetail`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,

@@ -23,7 +23,7 @@ const Cordinator = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `http://${IP_ADDRESS}:${PORT}/api/v1/co-ordinator/post-co-ordinator`,
+        `https://intso-backend-final.onrender.com/api/v1/co-ordinator/post-co-ordinator`,
         {
           method: "POST",
           body: JSON.stringify(formData),

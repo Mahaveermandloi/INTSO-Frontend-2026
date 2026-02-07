@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect } from "react";
 
 import { Cards } from "./Cards";
 import { AboutIntso } from "./AboutIntso";
@@ -12,9 +12,9 @@ import { Testimonial } from "./Testimonial";
 import { AboutExam } from "./AboutExam";
 import Slideshow from "./SlideShow";
 import { useLocation } from "react-router-dom";
-import { GalleryPage } from "../Gallery/GalleryPage";
+// import { GalleryPage } from "../Gallery/GalleryPage";
 import { Gallery } from "./Gallery";
-import { Adds } from "../common files/Adds";
+// import { Adds } from "../common files/Adds";
 
 export const Main = () => {
   const location = useLocation();

@@ -40,7 +40,7 @@ const ChangePassword = ({ notShow }) => {
     onSubmit: async (values, { setSubmitting }) => {
       try {
         const response = await fetch(
-          `http://${IP_ADDRESS}:${PORT}/api/v1/user/updatenewpassword`,
+          `https://intso-backend-final.onrender.com/api/v1/user/updatenewpassword`,
           {
             method: "POST",
             headers: {

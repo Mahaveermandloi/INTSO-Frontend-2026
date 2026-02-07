@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -40,7 +40,7 @@ const Login = () => {
     onSubmit: async (values, { setSubmitting }) => {
       try {
         const res = await fetch(
-          `http://${IP_ADDRESS}:${PORT}/api/v1/user/login`,
+          `https://intso-backend-final.onrender.com/api/v1/user/login`,
           {
             method: "POST",
             body: JSON.stringify(values),

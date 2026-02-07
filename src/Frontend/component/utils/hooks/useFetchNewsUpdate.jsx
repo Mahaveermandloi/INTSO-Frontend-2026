@@ -9,7 +9,7 @@ const useFetchNewsUpdate = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${IP_ADDRESS}:${PORT}/api/v1/newsandupdates/get-news-and-updates`,
+          `https://intso-backend-final.onrender.com/api/v1/newsandupdates/get-news-and-updates`,
           {
             method: "GET",
             headers: {

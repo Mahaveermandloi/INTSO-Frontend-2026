@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../component/style/adds.css";
 import { Link } from "react-router-dom";
 import useFetchData from "../utils/hooks/useFetchData";
-import { IP_ADDRESS, PORT } from "../utils/constants";
+// import { IP_ADDRESS, PORT } from "../utils/constants";
 import Spinner1 from "../common files/Spinner1";
 import img from "../../../../src/assets/Frontend_images/Action_1.png";
 import img1 from "../../../assets/Image_not_available.png";
@@ -32,7 +32,7 @@ const Slideshow = () => {
               <div key={index} style={{ position: "relative" }}>
                 <img
                   className="carousel-image md:h-[430px] h-full object-cover"
-                  src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                  src={`https://intso-backend-final.onrender.com${item.image}`}
                   onError={(e) => (e.target.src = img1)}
                   alt="not found"
                 />
@@ -61,6 +61,7 @@ const Slideshow = () => {
           style={{
             backgroundImage: `url(${img})`,
           }}>
+            
           <div className="max-w-screen-xl mx-auto lg:px-24 px-10 p-10">
             <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 text-white">
               <div className="text-left">

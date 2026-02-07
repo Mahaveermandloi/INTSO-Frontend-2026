@@ -22,7 +22,7 @@ const Images = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://${IP_ADDRESS}:${PORT}/api/v1/resource/getallimages`,
+        `https://intso-backend-final.onrender.com/api/v1/resource/getallimages`,
         {
           method: "GET",
           headers: {
@@ -102,7 +102,7 @@ const Images = () => {
                   className="rounded-xl flex flex-col space-y-2 border border-gray-300"
                   data-aos="zoom-in">
                   <img
-                    src={`http://${IP_ADDRESS}:${PORT}${item.resource_url}`}
+                    src={`https://intso-backend-final.onrender.com${item.resource_url}`}
                     className="rounded-lg w-full h-64"
                     alt={item.title}
                   />
@@ -131,7 +131,7 @@ const Images = () => {
                           className="text-white text-sm flex items-center"
                           onClick={() =>
                             handleDownload(
-                              `http://${IP_ADDRESS}:${PORT}${item.resource_url}`
+                              `https://intso-backend-final.onrender.com${item.resource_url}`
                             )
                           }>
                           Download

@@ -22,7 +22,7 @@ const Videos = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://${IP_ADDRESS}:${PORT}/api/v1/resource/getallvideos`,
+        `https://intso-backend-final.onrender.com/api/v1/resource/getallvideos`,
         {
           method: "GET",
           headers: {
@@ -101,8 +101,8 @@ const Videos = () => {
                   className="rounded-xl flex flex-col space-y-2 border border-gray-300"
                   data-aos="zoom-in">
                   <img
-                    // src={`http://${IP_ADDRESS}:${PORT}${item.resource_url}`}
-                    src={`http://${IP_ADDRESS}:${PORT}${item.thumbnail}`}
+                    // src={`https://intso-backend-final.onrender.com${item.resource_url}`}
+                    src={`https://intso-backend-final.onrender.com${item.thumbnail}`}
                     className="rounded-lg w-full h-64"
                     alt={item.title}
                   />

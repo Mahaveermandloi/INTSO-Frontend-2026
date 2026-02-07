@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import  { useState } from "react";
+import {  useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../assets/Intso_Slicing_Assets/Header_Logo/Header_Logo.png";
 import { ToastContainer, toast, Bounce } from "react-toastify";
@@ -110,7 +110,9 @@ const Login = () => {
 
   const validatePassword = (password) => {
     // Password must be at least 8 characters long and contain alphanumeric characters only
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    // const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
     return regex.test(password);
   };
 

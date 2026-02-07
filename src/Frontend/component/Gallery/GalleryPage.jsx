@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import ImageModal from "../Home/ImageModal";
 import { useLocation } from "react-router-dom";
 import { IP_ADDRESS, PORT } from "../utils/constants";
@@ -20,7 +20,8 @@ export const GalleryPage = () => {
     setDisplayedData(data);
   }, [data]);
   const openModal = (index) => {
-    setCurrentImage(`http://${IP_ADDRESS}:${PORT}${data[index].gallery_img}`);
+    setCurrentImage(`https://intso-backend-final.onrender.com${data[index].gallery_img}`);
+    // setCurrentImage(`https://intso-backend-final.onrender.com${data[index].gallery_img}`);
     setCurrentIndex(index);
     setIsModalOpen(true);
   };
@@ -31,14 +32,14 @@ export const GalleryPage = () => {
     const newIndex = currentIndex > 0 ? currentIndex - 1 : data.length - 1;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `http://${IP_ADDRESS}:${PORT}${data[newIndex].gallery_img}`
+      `https://intso-backend-final.onrender.com${data[newIndex].gallery_img}`
     );
   };
   const showNextImage = () => {
     const newIndex = currentIndex < data.length - 1 ? currentIndex + 1 : 0;
     setCurrentIndex(newIndex);
     setCurrentImage(
-      `http://${IP_ADDRESS}:${PORT}${data[newIndex].gallery_img}`
+      `https://intso-backend-final.onrender.com${data[newIndex].gallery_img}`
     );
   };
   const handleLoadMore = () => {
@@ -66,7 +67,7 @@ export const GalleryPage = () => {
             return (
               <div key={index} className={`${colSpanClass} relative w-full`}>
                 <img
-                  src={`http://${IP_ADDRESS}:${PORT}${item.gallery_img}`}
+                  src={`https://intso-backend-final.onrender.com${item.gallery_img}`}
                   onError={(e) => (e.target.src = img)}
                   alt=""
                   className="w-full h-48 object-cover cursor-pointer"

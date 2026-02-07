@@ -24,7 +24,7 @@ export const EventsMain = () => {
                   key={item.title}>
                   <img
                     className="lg:w-52 w-52"
-                    src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                    src={`https://intso-backend-final.onrender.com${item.image}`}
                     alt={item.title}
                   />
                   <div className="flex flex-col space-y-2 text-sm">

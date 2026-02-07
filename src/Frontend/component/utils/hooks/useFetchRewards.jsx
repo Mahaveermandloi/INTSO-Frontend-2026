@@ -7,7 +7,7 @@ const useFetchRewards = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${IP_ADDRESS}:${PORT}/api/v1/reward/getReward-data`,
+          `https://intso-backend-final.onrender.com/api/v1/reward/getReward-data`,
           {
             method: "GET",
             headers: {

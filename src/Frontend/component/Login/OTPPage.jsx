@@ -40,7 +40,7 @@ const OTPPage = () => {
       const otpCode = `${values.otp1}${values.otp2}${values.otp3}${values.otp4}`;
       try {
         const response = await fetch(
-          `http://${IP_ADDRESS}:${PORT}/api/v1/user/verifyuser`,
+          `https://intso-backend-final.onrender.com/api/v1/user/verifyuser`,
           {
             method: "POST",
             headers: {
@@ -82,7 +82,7 @@ const OTPPage = () => {
   const handleResendOTP = async () => {
     try {
       const response = await fetch(
-        `http://${IP_ADDRESS}:${PORT}/api/v1/user/resend`,
+        `https://intso-backend-final.onrender.com/api/v1/user/resend`,
         {
           method: "POST",
           headers: {

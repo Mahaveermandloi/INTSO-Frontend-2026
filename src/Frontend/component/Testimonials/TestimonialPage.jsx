@@ -33,7 +33,7 @@ const TestimonialPage = () => {
             className="flex flex-col justify-center items-center text-center space-y-4 p-2">
             <h1 className="font-bold text-xl text-center">{item.name}</h1>
             <img
-              src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+              src={`https://intso-backend-final.onrender.com${item.image}`}
               onError={(e) => (e.target.src = img)}
               className="rounded-full w-28 h-28"
               alt="testimonial"

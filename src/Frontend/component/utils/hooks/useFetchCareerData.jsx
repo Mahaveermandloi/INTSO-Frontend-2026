@@ -7,7 +7,7 @@ const useFetchCareerData = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${IP_ADDRESS}:${PORT}/api/v1/career/get-career-with-us`,
+          `https://intso-backend-final.onrender.com/api/v1/career/get-career-with-us`,
           {
             method: "GET",
             headers: {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { RxCross1 } from "react-icons/rx";
 import { ToastContainer, Bounce, toast } from "react-toastify";
@@ -24,13 +24,15 @@ const Banner = () => {
       if (accessToken) {
         const response = await axios.get(
           `${URLPath}/api/v1/banner/getBannerData`,
+
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
               api_key: API_KEY, // Replace 'api_key' with your actual API key variable
             },
-          }
+          },
         );
+
         // Handle response
 
         setGallery(response.data.data);
@@ -79,7 +81,7 @@ const Banner = () => {
               Authorization: `Bearer ${accessToken}`,
               "Content-Type": "multipart/form-data",
             },
-          }
+          },
         );
         if (response.status === 201) {
           // Check for 201 status code
@@ -136,7 +138,7 @@ const Banner = () => {
             Confirm
           </button>
         ),
-      }
+      },
     );
 
     while (!isConfirmed) {
@@ -154,7 +156,7 @@ const Banner = () => {
             headers: {
               Authorization: `Bearer ${accessToken}`,
             },
-          }
+          },
         );
 
         if (response.status === 200) {
@@ -169,7 +171,7 @@ const Banner = () => {
             theme: "light",
           });
           setGallery((prevGallery) =>
-            prevGallery.filter((item) => item.id !== id)
+            prevGallery.filter((item) => item.id !== id),
           );
         }
       } catch (error) {
@@ -225,7 +227,7 @@ const Banner = () => {
                 </>
               ) : (
                 <>
-                  {gallery.map(({ id, image, link }) => (
+                  {gallery.map(({ id, image }) => (
                     <div key={id} className="relative">
                       <img
                         className="h-auto max-w-full rounded-lg"
@@ -425,7 +427,6 @@ const Banner = () => {
               )}
             </div>
           </div>
-        
         </div>
       </div>
     </>

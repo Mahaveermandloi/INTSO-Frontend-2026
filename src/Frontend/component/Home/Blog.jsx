@@ -42,7 +42,7 @@ export const Blog = () => {
                       : "flex md:flex-row flex-col justify-center items-center"
                   }`}>
                   <img
-                    src={`http://${IP_ADDRESS}:${PORT}${item.image}`}
+                    src={`https://intso-backend-final.onrender.com${item.image}`}
                     className={`text-left border border-gray-300  object-cover rounded-3xl ${
                       index === 0
                         ? "h-52 w-full rounded-3xl object-cover "

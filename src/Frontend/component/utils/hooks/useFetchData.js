@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { API_KEY, IP_ADDRESS, PORT } from "../constants";
 
-const url = `http://${IP_ADDRESS}:${PORT}/api/v1/home/homeData`;
+const url = `https://intso-backend-final.onrender.com/api/v1/home/homeData`;
+
+
+
 const useFetchData = () => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
