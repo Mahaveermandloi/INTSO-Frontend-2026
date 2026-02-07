@@ -83,7 +83,7 @@ const VideosCard = ({ resources }) => {
                     key={item.id}>
                     <div className="relative w-full rounded-lg overflow-hidden">
                       <img
-                        src={`https://intso-backend-final.onrender.com${item.thumbnail}`}
+                        src={`https://intso-backend-2026.onrender.com/${item.thumbnail}`}
                         className="w-full h-64  object-cover"
                         alt={item.title}
                         style={{ display: "block" }}

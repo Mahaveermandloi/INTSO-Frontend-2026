@@ -21,7 +21,7 @@ const Videos = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://intso-backend-final.onrender.com/api/v1/resource/getallvideos`,
+        `https://intso-backend-2026.onrender.com//api/v1/resource/getallvideos`,
         {
           method: "GET",
           headers: {
@@ -106,7 +106,7 @@ const Videos = () => {
                   key={item.id}>
                   <div className="relative w-full rounded-lg overflow-hidden">
                     <img
-                      src={`https://intso-backend-final.onrender.com${item.thumbnail}`}
+                      src={`https://intso-backend-2026.onrender.com/${item.thumbnail}`}
                       className="w-full h-64"
                       alt={item.title}
                       style={{ display: "block" }}

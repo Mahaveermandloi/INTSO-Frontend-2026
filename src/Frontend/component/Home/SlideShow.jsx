@@ -32,7 +32,7 @@ const Slideshow = () => {
               <div key={index} style={{ position: "relative" }}>
                 <img
                   className="carousel-image md:h-[430px] h-full object-cover"
-                  src={`https://intso-backend-final.onrender.com${item.image}`}
+                  src={`https://intso-backend-2026.onrender.com/${item.image}`}
                   onError={(e) => (e.target.src = img1)}
                   alt="not found"
                 />

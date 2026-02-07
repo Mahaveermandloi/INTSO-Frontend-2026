@@ -40,7 +40,7 @@ const Login = () => {
     onSubmit: async (values, { setSubmitting }) => {
       try {
         const res = await fetch(
-          `https://intso-backend-final.onrender.com/api/v1/user/login`,
+          `https://intso-backend-2026.onrender.com//api/v1/user/login`,
           {
             method: "POST",
             body: JSON.stringify(values),

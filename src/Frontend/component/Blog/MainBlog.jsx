@@ -30,7 +30,7 @@ const MainBlog = () => {
                 {blog.title}
               </h1>
               <img
-                src={`https://intso-backend-final.onrender.com${blog.image}`}
+                src={`https://intso-backend-2026.onrender.com/${blog.image}`}
                 onError={(e) => (e.target.src = img)}
                 className="w-full  object-cover rounded-xl"
                 alt="Blog Cover"
@@ -58,7 +58,7 @@ const MainBlog = () => {
                   {recentBlogs.map((item) => (
                     <div className="flex lg:flex-row flex-col">
                       <img
-                        src={`https://intso-backend-final.onrender.com${item.image}`}
+                        src={`https://intso-backend-2026.onrender.com/${item.image}`}
                         onError={(e) => (e.target.src = img)}
                         className="lg:w-40 w-full h-40 object-cover rounded-xl "
                       />

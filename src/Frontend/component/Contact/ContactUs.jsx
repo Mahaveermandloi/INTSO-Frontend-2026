@@ -29,7 +29,7 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `https://intso-backend-final.onrender.com/api/v1/contact/postContact`,
+        `https://intso-backend-2026.onrender.com//api/v1/contact/postContact`,
         {
           method: "POST",
           body: JSON.stringify(formData),

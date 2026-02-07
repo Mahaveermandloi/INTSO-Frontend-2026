@@ -7,7 +7,7 @@ const useFetchRewards = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-final.onrender.com/api/v1/reward/getReward-data`,
+          `https://intso-backend-2026.onrender.com//api/v1/reward/getReward-data`,
           {
             method: "GET",
             headers: {

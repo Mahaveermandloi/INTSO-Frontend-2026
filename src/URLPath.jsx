@@ -1,6 +1,6 @@
 // export const URLPath = "https://intso-backend-vbs8.onrender.com";
 // export const URLPath = "http://localhost:8001";
-export const URLPath = "https://intso-backend-final.onrender.com";
+export const URLPath = "https://intso-backend-2026.onrender.com/";
 
 
 

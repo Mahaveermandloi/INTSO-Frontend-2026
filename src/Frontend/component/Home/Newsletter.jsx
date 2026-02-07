@@ -16,7 +16,7 @@ const Newsletter = () => {
 
     try {
       const response = await fetch(
-        `https://intso-backend-final.onrender.com/api/v1/newsLetter/postnewsletter`,
+        `https://intso-backend-2026.onrender.com//api/v1/newsLetter/postnewsletter`,
         {
           method: "POST",
           headers: {

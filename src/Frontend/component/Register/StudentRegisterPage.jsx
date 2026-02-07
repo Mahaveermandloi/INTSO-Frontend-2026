@@ -41,7 +41,7 @@ const StudentRegisterPage = () => {
 
     try {
       const res = await fetch(
-        `https://intso-backend-final.onrender.com/api/v1/student/createStudent`,
+        `https://intso-backend-2026.onrender.com//api/v1/student/createStudent`,
         {
           method: "POST",
           body: JSON.stringify(formData),

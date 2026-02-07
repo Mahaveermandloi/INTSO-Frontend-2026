@@ -7,7 +7,7 @@ const useFetchGalleryData = (page, limit) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://intso-backend-final.onrender.com/api/v1/gallery/getGalleryData-By-page?page=${page}&limit=${limit}`,
+          `https://intso-backend-2026.onrender.com//api/v1/gallery/getGalleryData-By-page?page=${page}&limit=${limit}`,
           {
             method: "GET",
             headers: {

@@ -29,7 +29,7 @@ const ForgotPassword = () => {
     onSubmit: async (values, { setSubmitting, setStatus }) => {
       try {
         const res = await fetch(
-          `https://intso-backend-final.onrender.com/api/v1/user/forgetpassword`,
+          `https://intso-backend-2026.onrender.com//api/v1/user/forgetpassword`,
           {
             method: "POST",
             body: JSON.stringify(values),
